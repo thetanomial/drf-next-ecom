@@ -15,6 +15,9 @@ class RegisterView(generics.CreateAPIView):
     queryset = CustomUser.objects.all()
     serializer_class = CustomUserSerializer
 
+    def post(self, request, *args, **kwargs):
+        return Response({"detail": "User registration is currently disabled."}, status=status.HTTP_403_FORBIDDEN)
+
 # Login View (for obtaining JWT token)
 class LoginView(generics.GenericAPIView):
     serializer_class = LoginSerializer
