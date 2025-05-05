@@ -1,0 +1,50 @@
+# === Python / Django ===
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+*.swp
+*.bak
+
+# Django media/static
+media/
+staticfiles/
+static/
+
+# Local env settings
+.env
+.env.*
+
+# Virtualenv
+venv/
+.env/
+*.env
+
+# VSCode and other editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# === Node.js / Next.js (in client/) ===
+client/node_modules/
+client/.next/
+client/out/
+client/.env
+client/.env.local
+client/.env.production
+client/.env.development
+client/.env.test
+client/npm-debug.log*
+client/yarn-debug.log*
+client/yarn-error.log*
+client/package-lock.json
+client/pnpm-lock.yaml
+
+# === OS-specific ===
+.DS_Store
+Thumbs.db
