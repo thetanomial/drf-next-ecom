@@ -11,6 +11,15 @@ from rest_framework import viewsets, status, mixins
 class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
+    
+    def get_permissions(self):
+        """
+        Instantiates and returns the list of permissions that the view requires.
+        """
+        if self.action in ['create', 'update', 'partial_update', 'destroy']:
+            # Only require IsAuthenticated for POST, PUT, and DELETE actions
+            return [IsAuthenticated()]
+        return []
 
 class CartViewSet(mixins.RetrieveModelMixin,
                   mixins.ListModelMixin,
